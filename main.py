@@ -3,9 +3,9 @@ import paramiko
 import sys
 
 cmd = "cd /mnt/archkvm/svn/rxhash/palo_enic_linux_esx_main/sa/src/palo/drivers/enic/linux/ 2>&1;\
-       echo FAILED > /tmp/enicbuildstatus 2>&1;\
-       make -f Makefile.outer 2>&1 && echo SUCCESS > /tmp/enicbuildstatus 2>&1;\
-       cat /tmp/enicbuildstatus"
+       echo FAILED > /tmp/govind_enicbuildstatus 2>&1;\
+       make -f Makefile.outer 2>&1 && echo SUCCESS > /tmp/govind_enicbuildstatus 2>&1;\
+       cat /tmp/govind_enicbuildstatus"
 
 table = [ ["10.106.186.201", "root", "root", cmd, "rhel 6.2"],
 	  ["10.106.186.200", "root", "root", cmd, "rhel 6.3"],
@@ -27,7 +27,7 @@ def ssh_action(client):
 	stdin, stdout, stderr = ssh.exec_command(client[3])
 	for i in stdout.readlines():
 		f.write(i)
-	stdin, stdout, stderr = ssh.exec_command("cat /tmp/enicbuildstatus")
+	stdin, stdout, stderr = ssh.exec_command("cat /tmp/govind_enicbuildstatus")
 	print stdout.readlines()[0]
 	ssh.close()
 	f.close()
