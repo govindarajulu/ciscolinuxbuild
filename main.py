@@ -15,6 +15,8 @@ table = [ ["10.106.186.201", "root", "root", cmd, "rhel 6.2"],
 	  ["10.106.186.193", "root", "root", cmd, "sles 11 sp2"],
 	  ["10.106.186.192", "root", "root", cmd, "sles 11 sp3"],
 	  ["10.106.186.191", "root", "root", cmd, "rhel 7.0"],
+	  ["10.106.186.197", "root", "root", cmd, "OVM sdk 3.2.1"],
+	  ["10.106.186.198", "root", "root", cmd, "OVM sdk 3.1.1"]
 	  ]
 
 def ssh_action(client):
